@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+           <script src="dev.js" defer></script>
+</head>
+<body id="body">
+      
+  <!--<h1 id="title">Bienvenue sur mon site web</h1>
+    
+    
+    <p id="para1">bienvenue sur ma webside</p>
+    <script>
+        const paragraph1 = document.getElementById("para1");
+        console.log(paragraph1)
+    </script> -->
+    
+    <button id="decreBtn">-</button>
+    <p id="compteur">   </p>
+    <button id="increBtn">+</button>
+    <button id="reset">reinitialiser</button>
+    <script>let decreBtn = document.getElementById("decreBtn");
+let increBtn = document.getElementById("increBtn");
+let compteur = document.getElementById("compteur");
+let reset = document.getElementById("reset");
+
+let count = 0;
+compteur.textContent = count;
+function increcompteur()  {
+    compteur.textContent == ++count
+
+    if (count > 0 ){
+        compteur.style.color = "green";
+    }
+}
+
+function decrecompteur()  {
+    compteur.textContent == --count
+
+    if (count < 0 ){
+        compteur.style.color = "red";
+    }
+}
+
+function resetcompteur()  {
+    count = 0
+    compteur.textContent = count;
+}
+
+    
+
+decreBtn.addEventListener("click", decrecompteur);
+increBtn.addEventListener("click", increcompteur);
+reset.addEventListener("click", resetcompteur);
+
+
+
+
+
+</script>
+</body>
+</html>
