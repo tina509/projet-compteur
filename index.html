@@ -1,64 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
- <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-           <script src="dev.js" defer></script>
+    <title>Compteur Simple</title>
+    <style>body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.counter {
+    font-size: 60px;
+    margin: 20px 0;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#increment {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#decrement {
+    background-color: #f44336;
+    color: white;
+}
+
+#reset {
+    background-color: #2196F3;
+    color: white;
+}
+
+.buttons button:hover {
+    opacity: 0.8;
+}
+</style>
 </head>
-<body id="body">
-      
-  <!--<h1 id="title">Bienvenue sur mon site web</h1>
-    
-    
-    <p id="para1">bienvenue sur ma webside</p>
-    <script>
-        const paragraph1 = document.getElementById("para1");
-        console.log(paragraph1)
-    </script> -->
-    
-    <button id="decreBtn">-</button>
-    <p id="compteur">   </p>
-    <button id="increBtn">+</button>
-    <button id="reset">reinitialiser</button>
-    <script>let decreBtn = document.getElementById("decreBtn");
-let increBtn = document.getElementById("increBtn");
-let compteur = document.getElementById("compteur");
-let reset = document.getElementById("reset");
+<body>
 
-let count = 0;
-compteur.textContent = count;
-function increcompteur()  {
-    compteur.textContent == ++count
+<div class="container">
+    <h1>Mon Compteur</h1>
+    <div class="counter" id="counter">0</div>
+    <div class="buttons">
+        <button id="decrement">-</button>
+        <button id="reset">Réinitialiser</button>
+        <button id="increment">+</button>
+    </div>
+</div>
 
-    if (count > 0 ){
-        compteur.style.color = "green";
-    }
+<script> let counter = 0;
+
+const counterDisplay = document.getElementById('counter');
+const incrementBtn = document.getElementById('increment');
+const decrementBtn = document.getElementById('decrement');
+const resetBtn = document.getElementById('reset');
+
+incrementBtn.addEventListener('click', () => {
+    counter++;
+    updateDisplay();
+});
+
+decrementBtn.addEventListener('click', () => {
+    counter--;
+    updateDisplay();
+});
+
+resetBtn.addEventListener('click', () => {
+    counter = 0;
+    updateDisplay();
+});
+
+function updateDisplay() {
+    counterDisplay.textContent = counter;
 }
-
-function decrecompteur()  {
-    compteur.textContent == --count
-
-    if (count < 0 ){
-        compteur.style.color = "red";
-    }
-}
-
-function resetcompteur()  {
-    count = 0
-    compteur.textContent = count;
-}
-
-    
-
-decreBtn.addEventListener("click", decrecompteur);
-increBtn.addEventListener("click", increcompteur);
-reset.addEventListener("click", resetcompteur);
-
-
-
-
-
 </script>
 </body>
 </html>
